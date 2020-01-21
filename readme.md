@@ -1,7 +1,7 @@
 # Личный проект «Куплю. Продам» [![Build status][travis-image]][travis-url]
 
 * Студент: [Ирина Шефер](https://up.htmlacademy.ru/nodejs/3/user/33806).
-* Наставник: `Неизвестно`.
+* Наставник: [Александр Миловидов](https://htmlacademy.ru/profile/id1144203).
 
 ---
 
