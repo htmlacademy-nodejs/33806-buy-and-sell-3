@@ -1,9 +1,7 @@
 'use strict';
 
-const fs = require(`fs`);
-const util = require(`util`);
+const fs = require(`fs`).promises;
 const chalk = require(`chalk`);
-const writeFile = util.promisify(fs.writeFile);
 const {TITLES, CATEGORIES, SENTENCES, OfferType, SumRestrict, PictureRestrict} = require(`./mockData`);
 
 const getRandomInt = (min, max) => {
@@ -37,7 +35,7 @@ const generateOffers = (count) => (
 
 const makeMockData = async (filename, data) => {
   try {
-    await writeFile(filename, data);
+    await fs.writeFile(filename, data);
     console.log(chalk.green(`The file has been saved!`));
   } catch (error) {
     console.error(chalk.red(`Can't write data to file`));
