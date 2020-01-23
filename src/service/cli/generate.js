@@ -19,7 +19,8 @@ module.exports = {
     }
 
     const countOffer = Number.parseInt(count, 10) || DEFAULT_COUNT;
-    const content = JSON.stringify(generateOffers(countOffer));
+    const offers = await generateOffers(countOffer);
+    const content = JSON.stringify(offers);
 
     await makeMockData(FILE_NAME, content);
     process.exit(ExitCode.success);
