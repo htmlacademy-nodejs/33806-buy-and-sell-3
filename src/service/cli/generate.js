@@ -1,12 +1,11 @@
 'use strict';
 
 const chalk = require(`chalk`);
-const {ExitCode} = require(`../constants`);
+const {ExitCode, MOCK_FILENAME} = require(`../constants`);
 const {generateOffers, makeMockData} = require(`../utils`);
 
 const DEFAULT_COUNT = 1;
 const MAX_COUNT = 1000;
-const FILE_NAME = `mocks.json`;
 
 module.exports = {
   name: `--generate`,
@@ -22,7 +21,7 @@ module.exports = {
     const offers = await generateOffers(countOffer);
     const content = JSON.stringify(offers);
 
-    await makeMockData(FILE_NAME, content);
+    await makeMockData(MOCK_FILENAME, content);
     process.exit(ExitCode.success);
   }
 };
